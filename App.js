@@ -1,23 +1,12 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView} from 'react-native';
-import {List} from './src/components/List/List';
-import {Search} from './src/components/Search/Search';
+import {Provider as PaperProvider} from 'react-native-paper';
 
-const App = () => {
+import {RestaurantsScreen} from './src/features/restaurants/screens/RestaurantsScreen';
+
+export default function App() {
   return (
-    <>
-      <SafeAreaView style={styles.container}>
-        <Search style={styles.search} />
-        <List style={styles.list} />
-      </SafeAreaView>
-    </>
+    <PaperProvider>
+      <RestaurantsScreen />
+    </PaperProvider>
   );
-};
-
-export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+}
